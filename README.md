@@ -1,8 +1,9 @@
 # fix id3 kr encoding #
 
-updates ID3 tags that includes EUC-KR or CP949 encoded tags to UTF-8 encoding.
+Updates ID3 tags that includes EUC-KR or CP949 encoded tags to UTF-8 encoding.
 
-needs mutagen library.
+Needs mutagen library.
+
     $ sudo easy_install mutagen
 
     $ cd directory_with_mp3_files
