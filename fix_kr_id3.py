@@ -3,7 +3,7 @@ import glob
 import os
 import re
 from mutagen.easyid3 import EasyID3
-# easy_install mutagen
+# pip install mutagen
 
 quiet = False
 
@@ -17,9 +17,9 @@ def fix_kr_tag(f, tag):
 
     if title[0] == converted:
       return False
-    #print "%s ?= %s" % (title[0], converted)
+    #print("%s ?= %s" % (title[0], converted))
     if not quiet:
-      print "  %s = %s" % (tag, converted)
+      print(f"  {tag} = {converted}")
     f[tag]=converted
     return True
   except:
@@ -35,7 +35,7 @@ def fix_kr_encoding(path):
 
   if needSave: 
     if not quiet:
-      print "updating %s" % path
+      print(f"updating {path}" )
     f.save()
 
 def fix_dir(directory):
@@ -44,7 +44,7 @@ def fix_dir(directory):
 
   for path in glob.glob(directory+"/*.[Mm][Pp]3"):
     if not quiet:
-      print "checking %s" % path
+      print(f"checking {path}")
     fix_kr_encoding(path)
 
 def main():
